@@ -5,9 +5,9 @@ from Data.pull_data import process_df
 
 print('------------------------Temperature Figure------------------------')
 import matplotlib.pyplot as plt
-plt.style.use('../../../Figures/fig_formatting.mplstyle')
+plt.style.use('../../../fig_formatting.mplstyle')
 
-spec1 = pd.read_csv("../../../Data/IMWUT_Data/temp_fluid_exp/Cold/spec_1.csv", usecols = ['1','2','5'])
+spec1 = pd.read_csv("../../../../Data/IMWUT_Data/temp_fluid_exp/Cold/spec_1.csv", usecols = ['1', '2', '5'])
 spec1 = process_df(spec1)
 spec1 = spec1.sort_values('timestamp')
 spec1 = spec1[3700:4275]
@@ -15,7 +15,7 @@ spec1 = spec1[(((spec1['timestamp'] - spec1['timestamp'].iloc[1])/100000) < 1) |
 spec1 = spec1[(((spec1['timestamp'] - spec1['timestamp'].iloc[1])/100000) < 2.15) | (((spec1['timestamp'] - spec1['timestamp'].iloc[1])/100000) >2.6)]
 
 
-spec2 = pd.read_csv("../../../Data/IMWUT_Data/temp_fluid_exp/Heat/spec_2.csv", usecols = ['1','2','5'])
+spec2 = pd.read_csv("../../../../Data/IMWUT_Data/temp_fluid_exp/Heat/spec_2.csv", usecols = ['1', '2', '5'])
 spec2 = process_df(spec2)
 spec2 = spec2.sort_values('timestamp')
 spec2 = spec2[3850:4425]
@@ -23,7 +23,7 @@ spec2 = spec2[(((spec2['timestamp'] - spec2['timestamp'].iloc[1])/100000) < 1) |
 spec2 = spec2[(((spec2['timestamp'] - spec2['timestamp'].iloc[1])/100000) < 2.15) | (((spec2['timestamp'] - spec2['timestamp'].iloc[1])/100000) >2.65)]
 
 
-spec3 = pd.read_csv("../../../Data/IMWUT_Data/temp_fluid_exp/Heat/spec_3.csv", usecols = ['1','2','5'])
+spec3 = pd.read_csv("../../../../Data/IMWUT_Data/temp_fluid_exp/Heat/spec_3.csv", usecols = ['1', '2', '5'])
 spec3 = process_df(spec3)
 spec3 = spec3.sort_values('timestamp')
 spec3 = spec3[3500:4070]
