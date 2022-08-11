@@ -1,0 +1,11 @@
+figure.figsize : 10,6
+
+axes.titlesize : 24
+axes.labelsize : 22
+xtick.labelsize : 20
+ytick.labelsize : 20
+legend.fontsize : 20
+lines.linewidth : 2
+axes.prop_cycle: cycler('color', ['7600ed','0028ff','00d5ff','1fff00','b3ff00','ffdf00','ff4f00','ff0000'])
+
+
