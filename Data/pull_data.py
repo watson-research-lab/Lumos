@@ -59,7 +59,7 @@ def pull_data(path,tstart, tend):
 
     print("Pulling data between: ",tstart, tend)
 
-    path = 'Data/'+path
+    #path = 'Data/'+path
 
     # Check whether the specified path exists or not
     isExist = os.path.exists(path)
