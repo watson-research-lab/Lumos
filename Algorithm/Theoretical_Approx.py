@@ -60,8 +60,7 @@ class Theoretical_Approx:
 
 
     def theory_approx(self):
-        fig = plt.figure(figsize=(60, 30))
-        ax = fig.add_subplot(111)
+
         areas_final = []
 
         for led_cw, led_fwhm in zip(self.led_cw, self.led_fwhw):
@@ -70,6 +69,8 @@ class Theoretical_Approx:
             for pd_cw, pd_fwhm in zip(self.pd_cw, self.pd_fwhw):
                 print(str(pd_cw), end=' ')
 
+                fig_ta = plt.figure(figsize=(10, 5))
+                ax = fig_ta.add_subplot(111)
                 # Plot the LED and PD
                 S1 = spb.spd_builder(peakwl=[led_cw], fwhm=[np.multiply(led_fwhm, 2)])
                 S2 = spb.spd_builder(peakwl=[pd_cw], fwhm=[np.multiply(pd_fwhm, 2)])
@@ -94,8 +95,9 @@ class Theoretical_Approx:
 
                 area = np.trapz(y, x)  # Calculate Area
                 areas.append(area / area_pd)
+                #print(areas)
                 ax.text(0.05, 0.95, f'Overlap: {area:.3f}', color='black', ha='left', va='top', transform=ax.transAxes)
             areas_final.append(areas)
 
-        print('\n',areas_final)
+        #print('\n',areas_final)
         return areas_final
