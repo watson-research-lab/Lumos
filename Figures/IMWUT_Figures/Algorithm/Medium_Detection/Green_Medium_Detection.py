@@ -81,10 +81,14 @@ z_new = griddata((X, Y), Z, (x_new[None,:], y_new[:,None]), method='cubic')
 
 x_new_grid, y_new_grid = np.meshgrid(x_new, y_new)
 
-surf = ax.plot_surface(x_new_grid, y_new_grid, z_new, cmap=cm.jet)
+surf = ax.plot_surface(x_new_grid, y_new_grid, z_new, cmap=cm.CMRmap)
 
-ax.set_xticks(led_df.Wavelength.tolist())
-ax.set_yticks(pd_df.Wavelength.tolist())
-
+ax.set_xlabel('LED',size=15)
+ax.set_ylabel('PD',size=15)
+ax.set_zlabel('Spectral Response',size=15)
+ax.set_title('Green', size=20)
 fig.show()
 print()
+
+fig.savefig("green.pdf", bbox_inches='tight')
+print('Done!')

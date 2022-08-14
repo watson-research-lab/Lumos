@@ -61,18 +61,38 @@ print('Exp: ',exp_arr)
 print('Theory: ',st_arr)
 st_arr = np.reshape(st_arr,(8,8))
 med_arr = np.subtract(exp_arr, st_arr)
+np.savetxt("theory_arr.csv", exp_arr, delimiter=",")
 
 #print(med_arr
 fig = plt.figure(figsize=(7,6))
 ax = plt.axes(projection='3d')
-X = led_df.Wavelength.tolist()*len(pd_df.Wavelength.tolist())
-Y = np.repeat(pd_df.Wavelength.tolist(), len(led_df.Wavelength.tolist()))
-Z = [item for sublist in med_arr for item in sublist]
+X = np.array(led_df.Wavelength.tolist()*len(pd_df.Wavelength.tolist()))
+Y = np.array(np.repeat(pd_df.Wavelength.tolist(), len(led_df.Wavelength.tolist())))
+Z = np.array([item for sublist in med_arr for item in sublist])
 
-surf = ax.plot_trisurf(X, Y, Z, cmap=cm.jet, linewidth=0.1)
+x_min = X.min()
+x_max = X.max()
+y_min = Y.min()
+y_max = Y.max()
+
+#citation
+#https://stackoverflow.com/questions/33287620/creating-a-smooth-surface-plot-from-topographic-data-using-matplotlib
+#https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.griddata.html
+
+#change third argument in linspace() to change interpolated dataset amount
+x_new = np.linspace(x_min, x_max, 600)
+y_new = np.linspace(y_min, y_max, 600)
+
+#change method: nearest, linear, cubic, etc.
+z_new = griddata((X, Y), Z, (x_new[None,:], y_new[:,None]), method='cubic')
+
+x_new_grid, y_new_grid = np.meshgrid(x_new, y_new)
+
+surf = ax.plot_surface(x_new_grid, y_new_grid, z_new, cmap=cm.jet)
 
 ax.set_xticks(led_df.Wavelength.tolist())
 ax.set_yticks(pd_df.Wavelength.tolist())
+ax.set_zticks([0,1])
 
 fig.show()
 print()
