@@ -59,6 +59,7 @@ for ta,ea in zip(theory_areas, exp_arr):
     #print
 print('Exp: ',exp_arr)
 print('Theory: ',st_arr)
+st_arr = np.reshape(st_arr,(8,8))
 med_arr = np.subtract(exp_arr, st_arr)
 
 #print(med_arr)
