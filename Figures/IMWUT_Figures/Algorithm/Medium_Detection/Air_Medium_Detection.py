@@ -62,7 +62,7 @@ print('Theory: ',st_arr)
 st_arr = np.reshape(st_arr,(8,8))
 med_arr = np.subtract(exp_arr, st_arr)
 
-#print(med_arr)
+#print(med_arr
 fig = plt.figure(figsize=(7,6))
 ax = plt.axes(projection='3d')
 X = led_df.Wavelength.tolist()*len(pd_df.Wavelength.tolist())
