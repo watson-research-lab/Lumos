@@ -12,7 +12,7 @@ led_df = pd.read_csv("../../../../Data/LEDs_watch.csv")
 pd_df = pd.read_csv("../../../../Data/PDs.csv")
 
 #Import Air Medium
-air_df = pd.read_csv("../../../../Data/IMWUT_Data/Medium/red.csv", usecols = ['1','2','5'])
+air_df = pd.read_csv("../../../../Data/IMWUT_Data/Medium/green.csv", usecols = ['1','2','5'])
 air_df = process_df(air_df)
 air_df = air_df.sort_values('timestamp')
 air_df = air_df.iloc[:-300]
