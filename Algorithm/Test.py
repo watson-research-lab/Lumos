@@ -26,6 +26,7 @@ y_max = Y.max()
 
 #citation
 #https://stackoverflow.com/questions/33287620/creating-a-smooth-surface-plot-from-topographic-data-using-matplotlib
+#https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.griddata.html
 
 #change third argument in linspace() to change interpolated dataset amount
 x_new = np.linspace(x_min, x_max, 600)
