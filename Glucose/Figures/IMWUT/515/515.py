@@ -49,16 +49,17 @@ l2 = ax2.plot(glucose_df.time[:-1], glucose_df.bs[:-1], 'ro', label='Glucose Rea
 N = 150
 #sos = signal.cheby2(N=4, Wn = [0.5, 10], btype = 'bandpass', fs=2)
 #print(sos)
-#ov_avg = np.convolve(spec_df[wv_col], np.ones(N) / N, mode='valid')
-x = np.linspace(min(glucose_df.time[:-1]), max(glucose_df.time[:-1]), num=len(sos), endpoint=True)
+mov_avg = np.convolve(spec_df[wv_col], np.ones(N) / N, mode='valid')
+x = np.linspace(min(glucose_df.time[:-1]), max(glucose_df.time[:-1]), num=len(mov_avg), endpoint=True)
 
-f2 = interp1d(glucose_df.time[:-1], glucose_df.bs[:-1], kind='cubic')
+f2 = interp1d(glucose_df.time[:-1], glucose_df.bs[:-1], kind='linear')
 
-l3 = ax.plot(spec_df.timestamp[:-1], sos, label='Spectral Sensor')
+signal.detrend(f2(x))
+l3 = ax.plot(spec_df.timestamp[:-(N-1)], mov_avg, label='Spectral Sensor')
 l4 = ax2.plot(x, f2(x), label='Glucose Reading')
 
-print('Pearson: ', pearsonr(sos, f2(x)))
-print('Speaman: ', spearmanr(sos, f2(x)))
+print('Pearson: ', pearsonr(mov_avg, f2(x)))
+print('Speaman: ', spearmanr(mov_avg, f2(x)))
 
 
 def numfmt(x, pos):  # your custom formatter function: divide by 100.0

@@ -49,7 +49,7 @@ l2 = ax2.plot(glucose_df.time[:-1], glucose_df.bs[:-1], 'ro', label='Glucose Rea
 N = 150
 mov_avg = np.convolve(spec_df[wv_col], np.ones(N) / N, mode='valid')
 x = np.linspace(min(glucose_df.time[:-1]), max(glucose_df.time[:-1]), num=len(mov_avg), endpoint=True)
-f2 = interp1d(glucose_df.time[:-1], glucose_df.bs[:-1], kind='cubic')
+f2 = interp1d(glucose_df.time[:-1], glucose_df.bs[:-1], kind='linear')
 
 l3 = ax.plot(spec_df.timestamp[:-(N - 1)], mov_avg, label='Spectral Sensor')
 l4 = ax2.plot(x, f2(x), label='Glucose Reading')
