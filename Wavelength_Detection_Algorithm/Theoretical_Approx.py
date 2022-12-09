@@ -97,6 +97,7 @@ class Theoretical_Approx:
                 areas.append(area / area_pd)
                 #print(areas)
                 ax.text(0.05, 0.95, f'Overlap: {area:.3f}', color='black', ha='left', va='top', transform=ax.transAxes)
+                #plt.show()
             areas_final.append(areas)
 
         #print('\n',areas_final)
