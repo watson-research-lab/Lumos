@@ -3,7 +3,7 @@ from Spectral_Response_of_Medium.Data.pull_data import process_df
 import matplotlib.pyplot as plt
 plt.style.use('../../fig_formatting.mplstyle')
 
-spec1 = pd.read_csv("../../../Spectral_Response_of_Medium/Data/IMWUT_Data/ON_OFF/spec_1.csv", usecols = ['1', '2', '5'])
+spec1 = pd.read_csv("../../IMWUT_Data/ON_OFF/spec_1.csv", usecols = ['1', '2', '5'])
 spec1 = process_df(spec1)
 spec1 = spec1.sort_values('timestamp')
 spec1 = spec1.reindex()
