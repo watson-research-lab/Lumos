@@ -5,9 +5,8 @@ This is the source code repository: Lumos: An Open-Source Device for Wearable Sp
 1. Hardware & Schematics
 2. Form Factor Designs
 3. Arduino Code
-4. 
-5. Python Source Code for the Wavelength Detection Algorithm
-6. Example Python Code for Detecting the Wavelength of Various Mediums
+4. Python Source Code for the Wavelength Detection Algorithm
+5. Example Python Code for Detecting the Wavelength of Various Mediums
 
 ### 1. Hardware & Schematics
 Hardware and Schematics contains a list of components needed to put together a Lumos device, the schematics for our custom PCB, and instructions for purchasing the PCB.
