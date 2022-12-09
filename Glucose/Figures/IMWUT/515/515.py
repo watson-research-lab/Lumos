@@ -7,6 +7,8 @@ from scipy import signal
 from Data.pull_data import process_df
 
 wv = '515'
+pds = '680'
+pd_col = pds + '_counts'
 wv_col = wv + '_counts'
 
 """Load Spec values and timestamps"""
@@ -42,14 +44,14 @@ ax = fig.gca()
 ax2 = ax.twinx()
 
 """Plot Raw Values"""
-l1 = ax.plot(spec_df.timestamp, spec_df[wv_col], label='Spectral Sensor')
+l1 = ax.plot(spec_df.timestamp, spec_df[pd_col], label='Spectral Sensor')
 l2 = ax2.plot(glucose_df.time[:-1], glucose_df.bs[:-1], 'ro', label='Glucose Reading')
 
 """Interpolated Data"""
 N = 150
 #sos = signal.cheby2(N=4, Wn = [0.5, 10], btype = 'bandpass', fs=2)
 #print(sos)
-mov_avg = np.convolve(spec_df[wv_col], np.ones(N) / N, mode='valid')
+mov_avg = np.convolve(spec_df[pd_col], np.ones(N) / N, mode='valid')
 x = np.linspace(min(glucose_df.time[:-1]), max(glucose_df.time[:-1]), num=len(mov_avg), endpoint=True)
 
 f2 = interp1d(glucose_df.time[:-1], glucose_df.bs[:-1], kind='linear')
@@ -70,7 +72,7 @@ def numfmt(x, pos):  # your custom formatter function: divide by 100.0
 import matplotlib.ticker as tkr  # has classes for tick-locating and -formatting
 yfmt = tkr.FuncFormatter(numfmt)  # create your custom formatter function
 ax.xaxis.set_major_formatter(yfmt)
-ax2.set_ylim([60, 150])
+ax2.set_ylim([150, 90])
 lns = l1 + l2
 labs = [l.get_label() for l in lns]
 ax.legend(lns, labs, loc=0, fontsize=16)
