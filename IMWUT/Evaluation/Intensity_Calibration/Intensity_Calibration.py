@@ -5,10 +5,10 @@ plt.rcParams['ps.fonttype'] = 42
 plt.style.use('../../fig_formatting.mplstyle')
 
 
-Kp_0_1 = pd.read_csv("../../../Data/IMWUT_Data/Intensity_Calibration/Kp_0_1.csv", delimiter=',', header=None)
-Kp_0_01 = pd.read_csv("../../../Data/IMWUT_Data/Intensity_Calibration/Kp_0_01.csv", delimiter=',', header=None)
-Kp_0_001 = pd.read_csv("../../../Data/IMWUT_Data/Intensity_Calibration/Kp_0_001.csv", delimiter=',', header=None)
-Kp_0_0001 = pd.read_csv("../../../Data/IMWUT_Data/Intensity_Calibration/Kp_0_0001.csv", delimiter=',', header=None)
+Kp_0_1 = pd.read_csv("../../../Spectral_Response_of_Medium/Data/IMWUT_Data/Intensity_Calibration/Kp_0_1.csv", delimiter=',', header=None)
+Kp_0_01 = pd.read_csv("../../../Spectral_Response_of_Medium/Data/IMWUT_Data/Intensity_Calibration/Kp_0_01.csv", delimiter=',', header=None)
+Kp_0_001 = pd.read_csv("../../../Spectral_Response_of_Medium/Data/IMWUT_Data/Intensity_Calibration/Kp_0_001.csv", delimiter=',', header=None)
+Kp_0_0001 = pd.read_csv("../../../Spectral_Response_of_Medium/Data/IMWUT_Data/Intensity_Calibration/Kp_0_0001.csv", delimiter=',', header=None)
 
 Kp_0_1.columns = ['LED', 'Steps', 'Intensity']
 Kp_0_01.columns = ['LED', 'Steps', 'Intensity']

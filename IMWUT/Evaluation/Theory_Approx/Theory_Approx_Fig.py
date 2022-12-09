@@ -1,22 +1,16 @@
-import numpy as np
 import pandas as pd
 from matplotlib import gridspec, pyplot as plt
 plt.rcParams['pdf.fonttype'] = 42
 plt.rcParams['ps.fonttype'] = 42
 
-import luxpy as lx
-import luxpy.toolboxes.spdbuild as spb
 from scipy.stats.stats import pearsonr
 plt.style.use('../../fig_formatting.mplstyle')
-
-
-from Data.pull_data import process_df
 
 print('------------------------Creating Spectrum Graphs------------------------')
 
 #Import LEDs and PDs
 data = pd.read_csv("Theory.csv")
-pd_df = pd.read_csv("../../../Data/PDs.csv")
+pd_df = pd.read_csv("../../../Spectral_Response_of_Medium/Data/PDs.csv")
 
 #Graphs
 total_graphs = 4 * 2

@@ -6,16 +6,16 @@ import luxpy.toolboxes.spdbuild as spb
 from scipy.stats.stats import pearsonr
 
 
-from Data.pull_data import process_df
+from Spectral_Response_of_Medium.Data.pull_data import process_df
 
 print('------------------------Creating Spectrum Graphs------------------------')
 
 #Import LEDs and PDs
-led_df = pd.read_csv("../../../Data/LEDs_watch.csv")
-pd_df = pd.read_csv("../../../Data/PDs.csv")
+led_df = pd.read_csv("../../../Spectral_Response_of_Medium/Data/LEDs_watch.csv")
+pd_df = pd.read_csv("../../../Spectral_Response_of_Medium/Data/PDs.csv")
 
 #Import Air Medium
-air_df = pd.read_csv("../../../Data/IMWUT_Data/Medium/air.csv", usecols = ['1', '2', '5'])
+air_df = pd.read_csv("../../../Spectral_Response_of_Medium/Data/IMWUT_Data/Medium/air.csv", usecols = ['1', '2', '5'])
 air_df = process_df(air_df)
 air_df = air_df.sort_values('timestamp')
 air_df = air_df.iloc[85:]
