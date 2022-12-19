@@ -5,7 +5,7 @@ This is the source code repository: Lumos: An Open-Source Device for Wearable Sp
 1. Hardware & Schematics
 2. Form Factor Designs
 3. Arduino Code
-4. Python Source Code for the Wavelength Detection Algorithm
+4. Python Source Code for the Spectral Response of Medium
 5. Example Python Code for Detecting the Wavelength of Various Mediums
 
 ### 1. Hardware & Schematics
@@ -19,3 +19,7 @@ Form factor designs contain the @Anush - need you input here. 3D printer files a
 Here we include the wiring/circuit diagram for our device and the code used to control it. 
 @Clarie add component diagram, Arduino code, any instructions that would be helpful. Once added, remove the test file from this folder
 Our code is based off of: https://github.com/aawatson22/Raproto-Arduino
+
+### 4. Algorithm that determines the spectral response of a medium. @Tarek - as you are working through, can you create a 
+working example for the open source github? Not sure of the best way to do this. In the next round of data collection, 
+the LED will be marked for each timestamp.
