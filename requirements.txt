@@ -1,0 +1,9 @@
+colormap==1.0.4
+luxpy==1.9.8
+matplotlib==3.5.2
+numpy==1.21.5
+pandas==1.4.4
+psycopg2==2.9.5
+PyYAML==6.0
+scipy==1.9.3
+sshtunnel==0.4.0
