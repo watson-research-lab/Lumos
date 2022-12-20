@@ -8,6 +8,9 @@ This is the source code repository: Lumos: An Open-Source Device for Wearable Sp
 4. Python Source Code for the Wavelength Detection Algorithm
 5. Example Python Code for Detecting the Wavelength of Various Mediums
 
+### Installation
+Install dependencies for the project using pip: ``` pip install -r requiremnets.txt```
+
 ### 1. Hardware & Schematics
 Hardware and Schematics contains a list of components needed to put together a Lumos device, the schematics for our custom PCB, and instructions for purchasing the PCB.
 @Anush - Add instructions for how to put together the board. Eventually, would be useful to have a place to purchase a full put together device minus the form factors.
@@ -30,6 +33,5 @@ To run the Arduino Code:
   5. Additional information on Arduino: https://www.arduino.cc/ 
 Our code is based off of: https://github.com/aawatson22/Raproto-Arduino
 
-### 4. Algorithm that determines the spectral response of a medium. @Tarek - as you are working through, can you create a 
-working example for the open source github? Not sure of the best way to do this. In the next round of data collection, 
-the LED will be marked for each timestamp.
+### 4. Algorithm that determines the spectral response of a medium. 
+An example notebook as been provided under /Spectral_Response_of_Medium/Example.pynb, along with sample medium, LED, and PD data in CSV format. The associated .py files are found under the same directory (Spectral_Response.py, Theoretical_Approx.py, etc).
