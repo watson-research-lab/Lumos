@@ -29,3 +29,7 @@ To run the Arduino Code:
   4. Compile and upload the code to the Arduino. 
   5. Additional information on Arduino: https://www.arduino.cc/ 
 Our code is based off of: https://github.com/aawatson22/Raproto-Arduino
+
+### 4. Algorithm that determines the spectral response of a medium. @Tarek - as you are working through, can you create a 
+working example for the open source github? Not sure of the best way to do this. In the next round of data collection, 
+the LED will be marked for each timestamp.
