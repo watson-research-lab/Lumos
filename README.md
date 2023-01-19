@@ -1,6 +1,6 @@
 # Lumos
-This is the source code repository: Lumos: An Open-Source Device for Wearable Spectroscopy Research
-@Amanda update for 
+This is the source code repository: [Lumos: An Open-Source Device for Wearable Spectroscopy Research](https://dl.acm.org/doi/10.1145/3569502). 
+It was accepted in the Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (IMWUT), Dec round, 2022.
 ### What's Included?
 1. Hardware & Schematics
 2. Form Factor Designs
