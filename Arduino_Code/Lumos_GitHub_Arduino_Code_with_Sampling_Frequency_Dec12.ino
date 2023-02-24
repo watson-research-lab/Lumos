@@ -84,8 +84,6 @@ void setup() {
   mqtt.setServer(mqtt_server, 8883);
 }
 void loop() {
-  uint16_t readings[12];
-  uint16_t counts[12];
   if (!mqtt.connected())
   {
     reconnect();
@@ -131,7 +129,10 @@ void loop() {
 void sample() {
   uint16_t readings[12];
   uint16_t counts[12];
-
+  if (!as7341.readAllChannels(readings)){
+    Serial.println("Error reading all channels!");
+    return;
+  }
   for(uint8_t i = 0; i < 12; i++) {
       if(i == 4 || i == 5) continue;
       // we skip the first set of duplicate clear/NIR readings
